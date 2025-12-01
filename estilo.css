@@ -1,0 +1,76 @@
+/* ======= ESTILOS GENERALES ======= */
+body {
+    font-family: "Poppins", sans-serif;
+    background: #ffffff; /* fondo blanco */
+    margin: 0;
+    padding: 0;
+    color: #ff3e9e; /* rosado fuerte */
+    text-align: center;
+}
+
+/* ======= HEADER ======= */
+header {
+    padding: 40px 20px;
+    background: #ffb6da; /* rosado pastel */
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.25);
+    color: #ffffff;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.nombre {
+    font-size: 1.2rem;
+    margin-top: -10px;
+    color: #ffe4f2;
+}
+
+/* ======= FOTO DE PERFIL ======= */
+.perfil img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid white;
+    background: white;
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+}
+
+/* ======= TARJETAS ======= */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    gap: 30px;
+}
+
+.card {
+    width: 260px;
+    padding: 25px;
+    text-decoration: none;
+    background: white;
+    border-radius: 25px;
+    border: 2px solid #ff88c9; /* borde rosado */
+    box-shadow: 0 5px 15px rgba(255, 20, 147, 0.15);
+    transition: 0.3s ease;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #ff3e9e;
+}
+
+.card p {
+    color: #ff74b8;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    border-color: #ff3e9e;
+    box-shadow: 0 10px 25px rgba(255, 20, 147, 0.25);
+}
