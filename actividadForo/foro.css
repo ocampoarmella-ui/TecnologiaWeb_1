@@ -1,0 +1,113 @@
+/* estilo.css - válido */
+
+/* Variables de color */
+:root {
+  --bg-top: #6ad1ff;
+  --bg-bottom: #8b6bff;
+  --accent: #ff4d4d;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --text-dark: #1f1f1f;
+  --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Reset simple */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fondo creativo: capa de degradado + patrón SVG repetido (data URI) + imagen opcional (descomentable) */
+html, body {
+  height: 100%;
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-image:
+    /* capa de degradado */
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 60%),
+
+    /* patrón SVG (repetido) - ligero tejido tipo cuadricula */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><rect width='60' height='60' fill='rgba(255,255,255,0.02)'/><path d='M0 0 L60 0 L60 60' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/></svg>");
+
+  background-repeat: repeat, repeat;
+  background-size: cover, 60px 60px;
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contenedor central */
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Tarjeta / hero */
+.hero {
+  width: 100%;
+  max-width: 980px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), var(--card-bg));
+  border-radius: 18px;
+  padding: 36px;
+  box-shadow: var(--shadow-strong);
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+
+/* TÍTULO: estilo tipo Mario (Press Start 2P) */
+.title {
+  font-family: "Press Start 2P", "Roboto", monospace;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1;
+  color: white;
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffdd59 0%, #ff5a5a 100%);
+  /* Efecto 'outline' grueso tipo pixelado usando múltiples text-shadow */
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    0 6px 12px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 0 rgba(0,0,0,0.12), 0 18px 30px rgba(0,0,0,0.10);
+  margin-bottom: 18px;
+}
+
+/* Subtítulo / párrafo introductorio (más neutro) */
+.lead {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #2b2b2b;
+  margin-top: 14px;
+  margin-bottom: 22px;
+}
+
+/* Bloque de contenido */
+.content {
+  margin-top: 18px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  padding: 20px;
+  color: #222;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Adaptabilidad */
+@media (max-width: 600px) {
+  .title {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  .hero {
+    padding: 20px;
+  }
+}
