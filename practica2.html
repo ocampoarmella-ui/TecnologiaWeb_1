@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios JavaScript</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container { text-align: center; max-width: 800px; width: 100%; }
+    h1 { color: white; font-size: 2.5em; margin-bottom: 15px; }
+    .subtitle { color: rgba(255,255,255,0.9); font-size: 1.1em; margin-bottom: 30px; }
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    button {
+      padding: 30px 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    button:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+    button:active { transform: translateY(-2px); }
+    .btn-1 { background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%); }
+    .btn-2 { background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); }
+    .btn-3 { background: linear-gradient(135deg, #FFD93D 0%, #FFC107 100%); }
+    .btn-4 { background: linear-gradient(135deg, #FF9500 0%, #FF7700 100%); }
+    .btn-5 { background: linear-gradient(135deg, #A8EDEA 0%, #78B8E8 100%); }
+    .emoji { font-size: 2em; }
+    .btn-text { font-size: 1em; }
+    #resultado {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      min-height: 100px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      font-size: 1.2em;
+      text-align: left;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ejercicios JavaScript</h1>
+    <p class="subtitle">Selecciona un ejercicio para comenzar</p>
+    
+    <div class="buttons-grid">
+      <button class="btn btn-1" onclick="cargarEjercicio('practica2/ejercicio1.js')">
+        <span class="emoji">🌡️</span>
+        <span class="btn-text">Ejercicio 1<br>Clima por Temperatura</span>
+      </button>
+      <button class="btn btn-2" onclick="cargarEjercicio('practica2/ejercicio2.js')">
+        <span class="emoji">🔄</span>
+        <span class="btn-text">Ejercicio 2<br>FizzBuzz</span>
+      </button>
+      <button class="btn btn-3" onclick="cargarEjercicio('practica2/ejercicio3.js')">
+        <span class="emoji">📅</span>
+        <span class="btn-text">Ejercicio 3<br>Fecha Actual</span>
+      </button>
+      <button class="btn btn-4" onclick="cargarEjercicio('practica2/ejercicio4.js')">
+        <span class="emoji">🏛️</span>
+        <span class="btn-text">Ejercicio 4<br>Lugar Turístico</span>
+      </button>
+      <button class="btn btn-5" onclick="cargarEjercicio('practica2/ejercicio5.js')">
+        <span class="emoji">🏨</span>
+        <span class="btn-text">Ejercicio 5<br>Gestión Hotel</span>
+      </button>
+    </div>
+
+    <div id="resultado">
+      <strong>Resultado:</strong>
+      <div id="salida"></div>
+    </div>
+  </div>
+
+  <script>
+    function cargarEjercicio(archivo) {
+      const salidaDiv = document.getElementById('salida');
+      salidaDiv.innerHTML = ""; 
+      if(console.oldLog) console.log = console.oldLog;
+      console.oldLog = console.log;
+      console.log = function(...args) {
+        salidaDiv.innerHTML += args.join(" ") + "\n";
+        console.oldLog.apply(console, args);
+      };
+      const prevScript = document.getElementById('script-ejercicio');
+      if(prevScript) prevScript.remove();
+      const script = document.createElement('script');
+      script.src = archivo + '?t=' + new Date().getTime();
+      script.id = 'script-ejercicio';
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
+</html>
