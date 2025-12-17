@@ -1,0 +1,41 @@
+{
+  "squadName": "Cerro Rico de Potosí",
+  "homeTown": "Potosí, Bolivia",
+  "formed": 2025,
+  "secretBase": "Complejo Minero del Cerro Rico",
+  "active": true,
+  "members": [
+    {
+      "name": "Mina San José",
+      "age": 478,
+      "secretIdentity": "Explotación Colonial",
+      "powers": [
+        "Extracción de plata",
+        "Extracción de estaño",
+        "Producción minera histórica"
+      ]
+    },
+    {
+      "name": "Cooperativa Minera",
+      "age": 90,
+      "secretIdentity": "Trabajo Comunitario",
+      "powers": [
+        "Minería artesanal",
+        "Economía local",
+        "Sostenimiento laboral"
+      ]
+    },
+    {
+      "name": "Cerro Rico",
+      "age": 480,
+      "secretIdentity": "Sumaj Orcko",
+      "powers": [
+        "Valor histórico mundial",
+        "Patrimonio cultural",
+        "Atractivo turístico",
+        "Importancia económica",
+        "Simbolo nacional"
+      ]
+    }
+  ]
+}

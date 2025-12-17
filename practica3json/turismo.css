@@ -1,0 +1,77 @@
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #d4af37; /* Dorado */
+}
+
+/* Títulos */
+h1, h2 {
+  font-family: 'Faster One', cursive;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+/* Texto del header */
+header p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Contenedor de artículos */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Tarjetas */
+section article {
+  flex: 1 1 100%;
+  border: 1px solid #b8962e;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #fff8dc; /* Dorado claro para contraste */
+}
+
+/* Párrafos */
+section p {
+  margin: 5px 0;
+}
+
+section ul {
+  margin-top: 0;
+}
+
+/* Subtítulos */
+h2 {
+  font-size: 2rem;
+  letter-spacing: -3px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  section article {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (min-width: 900px) {
+  section article {
+    flex: 1 1 calc(33.333% - 1rem);
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+}
